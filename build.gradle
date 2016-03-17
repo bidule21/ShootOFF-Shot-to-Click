@@ -12,8 +12,12 @@ repositories {
    flatDir {
        dirs 'libs'
    }
+
+   mavenCentral()
 }
 
 dependencies {
    compile name: 'ShootOFF'
+
+   compile group: 'org.slf4j', name: 'slf4j-api', version: '1.+'
 }

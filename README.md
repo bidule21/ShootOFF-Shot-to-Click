@@ -9,5 +9,6 @@ This exercise DOES NOT work with DirectX games, which require much more effort t
 ## More Flash Games
 
 - https://www.thepcmanwebsite.com/media/shooting_range/
+- http://www.puffgames.com/shootinggallery/
 - http://www.myduckhuntinggames.com/game/ModernDuckHunt.html
 - http://www.myduckhuntinggames.com/game/Deer-Hunter.html

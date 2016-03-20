@@ -20,7 +20,8 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 
 	private Robot clicker;
 
-	public ShotToClick() {}
+	public ShotToClick() {
+	}
 
 	public ShotToClick(List<Group> targets) {
 		super(targets);
@@ -49,9 +50,6 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 	public void shotListener(Shot shot, Optional<Hit> hit) {
 		final Point2D arenaScreenOrigin = super.getArenaScreenOrigin();
 
-		System.out.println((int) (shot.getX() + arenaScreenOrigin.getX()) + " " +
-				(int) (shot.getY() + arenaScreenOrigin.getY()));
-		
 		clicker.mouseMove((int) (shot.getX() + arenaScreenOrigin.getX()),
 				(int) (shot.getY() + arenaScreenOrigin.getY()));
 		clicker.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -59,5 +57,6 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 	}
 
 	@Override
-	public void reset(List<Group> targets) {}
+	public void reset(List<Group> targets) {
+	}
 }

@@ -10,10 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.shootoff.camera.Shot;
-import com.shootoff.gui.Hit;
+import com.shootoff.targets.Hit;
+import com.shootoff.targets.Target;
 
 import javafx.geometry.Point2D;
-import javafx.scene.Group;
 
 public class ShotToClick extends ProjectorTrainingExerciseBase implements TrainingExercise {
 	private static final Logger logger = LoggerFactory.getLogger(ShotToClick.class);
@@ -23,7 +23,7 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 	public ShotToClick() {
 	}
 
-	public ShotToClick(List<Group> targets) {
+	public ShotToClick(List<Target> targets) {
 		super(targets);
 	}
 
@@ -57,6 +57,6 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 	}
 
 	@Override
-	public void reset(List<Group> targets) {
+	public void reset(List<Target> targets) {
 	}
 }

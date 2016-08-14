@@ -41,7 +41,7 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 
 	@Override
 	public ExerciseMetadata getInfo() {
-		return new ExerciseMetadata("Shot to Click", "1.3", "phrack",
+		return new ExerciseMetadata("Shot to Click", "1.4", "phrack",
 				"This exercise converts a shot on a projection to a click on the screen being projected. "
 						+ "To use this exercise, start the Projector Arena and calibrate, then minimize the arena "
 						+ "and replace it on the projector with a Flash game or similar that you'd like to play "
@@ -51,10 +51,10 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 
 	@Override
 	public void shotListener(Shot shot, Optional<Hit> hit) {
-		final Point2D arenaScreenOrigin = super.getArenaScreenOrigin();
+		final Point2D translatedShot = super.translateToTrueArenaCoords(new Point2D(shot.getX(), shot.getY()));
 
-		clicker.mouseMove((int) (shot.getX() + arenaScreenOrigin.getX()),
-				(int) (shot.getY() + arenaScreenOrigin.getY()));
+		clicker.mouseMove((int) (shot.getX() + translatedShot.getX()),
+				(int) (shot.getY() + translatedShot.getY()));
 		clicker.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		clicker.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 	}

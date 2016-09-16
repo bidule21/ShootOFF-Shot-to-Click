@@ -1,6 +1,9 @@
 package com.shootoff.plugins;
 
 import java.awt.AWTException;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.PointerInfo;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.util.List;
@@ -51,12 +54,21 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 
 	@Override
 	public void shotListener(Shot shot, Optional<Hit> hit) {
+		PointerInfo a = MouseInfo.getPointerInfo();
+		Point b = a.getLocation();
+		int x = (int) b.getX();	
+		int y = (int) b.getY();
+
 		final Point2D translatedShot = super.translateToTrueArenaCoords(new Point2D(shot.getX(), shot.getY()));
+
+		
 
 		clicker.mouseMove((int) (translatedShot.getX()),
 				(int) (translatedShot.getY()));
 		clicker.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		clicker.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		clicker.mouseMove(x,  y);
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class ShotToClick extends ProjectorTrainingExerciseBase implements Traini
 
 	@Override
 	public ExerciseMetadata getInfo() {
-		return new ExerciseMetadata("Shot to Click", "1.5", "phrack",
+		return new ExerciseMetadata("Shot to Click", "1.6", "phrack",
 				"This exercise converts a shot on a projection to a click on the screen being projected. "
 						+ "To use this exercise, start the Projector Arena and calibrate, then minimize the arena "
 						+ "and replace it on the projector with a Flash game or similar that you'd like to play "
